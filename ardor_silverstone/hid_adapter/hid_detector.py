@@ -28,5 +28,5 @@ def detect_hid_device(device_name: str) -> tuple[int, int]:
 
     device = try_detect_hid_device(device_name)
     if not device:
-        exit(1)
+        raise Exception(f"Failed to detect HID device with name `{device_name}`")
     return device

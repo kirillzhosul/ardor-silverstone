@@ -1,8 +1,8 @@
 import threading
 from typing import Any, Callable, Generator, Self
 
-from hid_adapter.hid_adapter import HIDAdapter
-from hid_adapter.hid_detector import detect_hid_device
+from .hid_adapter.hid_adapter import HIDAdapter
+from .hid_adapter.hid_detector import detect_hid_device
 
 
 class Controller:

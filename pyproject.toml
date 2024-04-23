@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ardor-silverstone"
-version = "0.1.0"
+version = "0.1.1"
 description = "Ardor Silverstone PC racing wheel library"
 authors = ["Kirill Zhosul <kirillzhosul@yandex.com>"]
 packages = [{ include = "ardor_silverstone" }]
@@ -9,7 +9,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-hid = "^1.0.6"
+hidapi = "^0.14.0"
 
 
 [build-system]

@@ -1,4 +1,4 @@
-import hid
+import hid  # type: ignore
 
 
 def try_detect_hid_device(device_name: str) -> tuple[int, int] | None:

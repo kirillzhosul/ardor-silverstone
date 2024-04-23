@@ -1,6 +1,6 @@
 from typing import Any, Generator, NoReturn
 
-import hid
+import hid  # type: ignore
 
 
 class HIDAdapter:

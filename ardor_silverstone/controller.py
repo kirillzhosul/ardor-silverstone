@@ -64,7 +64,6 @@ class ControllerAdapter(Controller):
     def read_blocking_generator(
         self, adapter: HIDAdapter | None = None
     ) -> Generator[Self, Any, None]:
-
         if adapter is None:
             adapter = HIDAdapter(*detect_hid_device("ARDOR GAMING Silverstone"))
 

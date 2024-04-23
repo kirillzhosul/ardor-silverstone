@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ardor-silverstone"
+version = "0.1.0"
+description = "Ardor Silverstone PC racing wheel library"
+authors = ["Kirill Zhosul <kirillzhosul@yandex.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+hid = "^1.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

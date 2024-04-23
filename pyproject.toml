@@ -3,6 +3,7 @@ name = "ardor-silverstone"
 version = "0.1.0"
 description = "Ardor Silverstone PC racing wheel library"
 authors = ["Kirill Zhosul <kirillzhosul@yandex.com>"]
+packages = [{ include = "ardor_silverstone" }]
 license = "MIT"
 readme = "README.md"
 

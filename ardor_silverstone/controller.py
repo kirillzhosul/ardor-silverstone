@@ -14,7 +14,6 @@ class Controller:
     pedal_gas: float
     pedal_clutch: float
     pedal_break: float
-    pedal_vector: float
     buttons: dict[str, bool] = {}
     handbrake: bool
     turn_signal: int
@@ -60,12 +59,12 @@ class Controller:
     def buttons_from_raw(self, buttons: tuple[int, int, int]):
         # 00000000 0000____ _00_0000
         # TODO: DPAD
-        self.handbrake = buttons[2] & 0b10000000
-        self.buttons["start"] = buttons[2] & 0b00010000
-        self.buttons["a"] = buttons[1] & 0b00000001
-        self.buttons["b"] = buttons[1] & 0b00000010
-        self.buttons["x"] = buttons[1] & 0b00000100
-        self.buttons["y"] = buttons[1] & 0b00001000
+        self.handbrake = bool(buttons[2] & 0b10000000)
+        self.buttons["start"] = bool(buttons[2] & 0b00010000)
+        self.buttons["a"] = bool(buttons[1] & 0b00000001)
+        self.buttons["b"] = bool(buttons[1] & 0b00000010)
+        self.buttons["x"] = bool(buttons[1] & 0b00000100)
+        self.buttons["y"] = bool(buttons[1] & 0b00001000)
         self.turn_signals = bool(buttons[1] & 0b00100000) - bool(
             buttons[1] & 0b00010000
         )

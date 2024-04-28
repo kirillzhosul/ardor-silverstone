@@ -1,6 +1,8 @@
+from time import sleep
 from typing import Any, Generator, NoReturn
 
 import hid  # type: ignore
+import random
 
 
 class HIDAdapter:
@@ -23,3 +25,16 @@ class HIDAdapter:
 
     # for n in r:
     #    print(format(n, "08b"), end=" ")
+
+
+class MockHIDAdapter(HIDAdapter):
+    def __init__(self, vendor_id: int = 0, product_id: int = 0) -> None:
+        super().__init__(vendor_id, product_id)
+
+    def read_raw_stream(self) -> Generator[list[int], Any, NoReturn]:
+        while True:
+            raw_report: list[int] = [random.randrange(0, 255) for _ in range(19)]  # type: ignore
+            yield raw_report
+            sleep(2)
+
+    def _open_device(self) -> None: ...
